@@ -1,12 +1,6 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+# Side Eater
+Simple game that has incoming objects from the right side and a controllable player on the left.
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+The idea is to show how instances can communicate in Greenfoot and have discussions on where to place methods and instance variables. Also how to make these available to other instances.
+
+In this example the Player holds information about lives, however the World (MyWorld) actually prints the lives on a label on the screen. Is the optimal placement of lives on Player or MyWorld?
