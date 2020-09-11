@@ -98,6 +98,7 @@ public class MyWorld extends World
         asymmetryLow = 0;
         asymmetryHigh = 0;
         drawit(startAngle,iterations);
+        Greenfoot.start();
     }
 
     public void update(){
