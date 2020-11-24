@@ -56,4 +56,20 @@ public class PersonDAO {
             throwables.printStackTrace();
         }
     }
+
+    public void update(Person person) {
+        try(Connection con = dataSource.getConnection()){
+            String sql = "UPDATE Persons SET name=?, birthyear=? WHERE id=?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, person.getName());
+            pstmt.setInt(2, person.getBirthyear());
+            pstmt.setInt(3, person.getId());
+            pstmt.executeUpdate();
+
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
