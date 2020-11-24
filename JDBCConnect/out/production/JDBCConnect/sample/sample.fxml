@@ -16,7 +16,7 @@
             <Font size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="txtId" layoutX="27.0" layoutY="65.0" prefHeight="27.0" prefWidth="125.0" />
+      <TextField fx:id="txtId" disable="true" layoutX="27.0" layoutY="65.0" prefHeight="27.0" prefWidth="125.0" />
       <Label layoutX="33.0" layoutY="40.0" text="Id" />
       <TextField fx:id="txtName" layoutX="25.0" layoutY="121.0" prefHeight="25.0" prefWidth="125.0" />
       <TextField fx:id="txtYear" layoutX="25.0" layoutY="188.0" prefHeight="25.0" prefWidth="125.0" />

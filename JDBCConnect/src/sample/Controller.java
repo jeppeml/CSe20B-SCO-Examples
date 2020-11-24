@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    @FXML private TextField txtName;
+    @FXML private TextField txtYear;
     @FXML private ListView<Person> lstPersons;
     @FXML private TextField txtId;
 
@@ -24,14 +26,19 @@ public class Controller implements Initializable {
         // txtId
        // lstPersons.getSelectionModel().getSelectedItem()
        // Event way of doing it
-       lstPersons.getSelectionModel().selectedItemProperty().addListener(
+
+        lstPersons.getSelectionModel().selectedItemProperty().addListener(
                (obs, oldVal, newVal) -> {
-                   txtId.setText(newVal.getId()+"");
+                   if(newVal!=null){
+                    txtId.setText(newVal.getId()+"");
+                    txtName.setText(newVal.getName());
+                    txtYear.setText(newVal.getBirthyear()+"");
+                   }
                });
 
        // Property binding way of doing it
 
-        txtId.textProperty().bind(lstPersons.getSelectionModel().selectedItemProperty().asString());
+        //txtId.textProperty().bind(lstPersons.getSelectionModel().selectedItemProperty()..idProperty().asString());
 
     }
 
@@ -52,6 +59,8 @@ public class Controller implements Initializable {
 
     public void clickUpdate(ActionEvent actionEvent) {
         Person selectedPerson = lstPersons.getSelectionModel().getSelectedItem();
+        selectedPerson.setBirthyear(Integer.parseInt(txtYear.getText()));
+        selectedPerson.setName(txtName.getText());
         personDAO.update(selectedPerson);
     }
 }
