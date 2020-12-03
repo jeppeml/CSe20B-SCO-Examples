@@ -96,8 +96,8 @@ public class AppTileController implements Initializable {
         clmTopSimUsersName.setCellValueFactory(new PropertyValueFactory<>("name"));
         clmTopSimUsersSimilarity.setCellValueFactory(new PropertyValueFactory<>("similarityPercent"));
 
-        clmTopSimMovieTitle.setCellValueFactory(new PropertyValueFactory<>("movie"));
-        //clmTopSimMovieYear.setCellValueFactory(new PropertyValueFactory<>("year"));
+        clmTopSimMovieTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        clmTopSimMovieYear.setCellValueFactory(new PropertyValueFactory<>("year"));
         clmTopSimMovieAvgRating.setCellValueFactory(new PropertyValueFactory<>("averageRating"));
 
 
@@ -120,6 +120,7 @@ public class AppTileController implements Initializable {
                 (observableValue, oldUser, selectedUser) -> {
                     startTimer("Loading all data for user: " + selectedUser);
                     model.loadData(selectedUser);
+                    stopTimer();
                 });
     }
 
